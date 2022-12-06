@@ -1,25 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import Subtitle from './components/SubTitle';
+import Tasklist from './components/TaskList';
+import Welcome from './components/Welcome';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const user = {
+    name: "Roberto",
+    surname: "Prampolini"
+  }
+
+  const list1 = [
+    {title: "Task",
+    completed: true},
+
+    {title: "Task2",
+    completed: true},
+
+    {title: "Task3",
+    completed: false},
+
+    {title: "Task4",
+    completed: false},
+  ]
+  if (list1 === undefined || list1.length == 0) {
+    return  (
+      <div className="App">
+        <p>Non ci sono attività</p>
+      </div>
+    )
+  }else{
+    return (
+      <div className="App">
+        <Welcome user={user}/>
+        <Subtitle/>
+        <Tasklist tasks={list1}/>
+      </div>
+    );
+  }
 }
 
 export default App;
