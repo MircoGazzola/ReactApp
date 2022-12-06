@@ -22,7 +22,7 @@ function App() {
     {title: "Task4",
     completed: false},
   ]
-  if (list1 === undefined || list1.length == 0) {
+  if (list1 === undefined || list1.length === 0) {
     return  (
       <div className="App">
         <p>Non ci sono attività</p>
